@@ -1,6 +1,7 @@
 import { getLocalStorage, removeLocalStorage } from "../helpers/local-storage";
 import { initials } from "../helpers/generators";
 import { redirect } from "../helpers/alerts";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 let auth = getLocalStorage("user");
 
@@ -17,8 +18,9 @@ const Sidebar = () => {
         <p>Rol:{auth.role}</p>
       </div>
       <nav>
-        <a href="">Ofertas</a>
-        <a href="">Candidatos</a>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="offers/">Ofertas</Link>
+        <Link to="candidates/">Candidatos</Link>
       </nav>
       <button onClick={logout}>Cerrar Sesión</button>
     </aside>
